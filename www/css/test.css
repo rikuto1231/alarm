@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin-top: 20px;
+    font-family: 'Lato', sans-serif;
+    background-color: #eee;
+}
+
+button {
+    outline: 0;
+    font-family: Avenir;
+    font-family: 'Lato', sans-serif;
+}
+
+hr {
+    margin: 0;
+    border: 1px solid rgb(89, 64, 92);
+}
+
+.mainContainer {
+    position: relative;
+    text-align: center;
+}
+
+.clock_logo {
+    position: absolute;
+    margin-top: 20px;
+    margin-right: 80%;
+    font-size: 1.6rem;
+}
+
+.cloud {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 80%;
+    font-size: 1.6rem;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.box1 {
+    background-color: #1b262c;
+    width: 20rem;
+    height: 90vh;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+}
+
+.timeZone {
+    position: absolute;
+    margin-top: 50px;
+}
+
+.clockBox {
+    box-shadow: 1px 0px 10px 3px royalblue;
+    width: 16rem;
+    height: 15rem;
+    position: absolute;
+    border-radius: 50%;
+    top: 20%;
+}
+
+.hr,
+.mn {
+    width: 100px;
+    background: none;
+    font-size: 3rem;
+    font-weight: bolder;
+    outline: hidden;
+    border: none;
+    position: absolute;
+    top: 85px;
+    color: whitesmoke;
+}
+
+.time {
+    margin-top: 65px;
+    font-size: 4rem;
+}
+
+.alarmBox {
+    box-shadow: 0px 0px 2px 3px grey;
+    border-radius: 30px;
+    width: 70px;
+    height: 30px;
+    margin-top: 8%;
+    margin-left: 36%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.date {
+    position: absolute;
+    width: 100%;
+    bottom: 108px;
+}
+
+.box2 {
+    width: 20rem;
+    height: 90vh;
+    border-radius: 30px;
+    display: inline-block;
+    background-color: #1b262c;
+    color: whitesmoke;
+}
+
+@media (max-width: 480px) {
+    .box2 {
+        margin-top: 35px;
+    }
+}
+
+.alarms {
+    border-width: 100%;
+    margin-left: 5px;
+}
+
+.alm_setting {
+    margin-top: 40px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+.alarm_logo {
+    font-size: 2rem;
+    color: whitesmoke;
+    margin-top: 1rem;
+}
+
+.btn-alarm {
+    width: 70%;
+    border: none;
+    border-radius: 70px;
+    margin-top: 20px;
+    padding: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    background: royalblue;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn-alarm:hover {
+    background: #3282b8;
+}
+
+.setAlarm {
+    width: 100%;
+    display: flex;
+    margin-top: -20px;
+    color: white;
+}
+
+.setTimer {
+    width: 100%;
+    display: flex;
+    margin-top: -20px;
+    color: white;
+    margin-left: 10px;
+}
+
+.setHr,
+.setMn {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    background: none;
+    border: none;
+    color: whitesmoke;
+    margin: 0;
+}
+
+.toggle {
+    width: 50%;
+    align-self: center;
+    text-align: right;
+    margin-bottom: 13px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 100px;
+    height: 0px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #59405c;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #3282b8;
+}
+
+input:checked + .slider:before {
+    background-color: #fff;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#snooze {
+    width: 70%;
+    visibility: hidden;
+    border: none;
+    border-radius: 70px;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: skyblue;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.footer {
+    font-size: 23px;
+    text-align: center;
+    font-weight: bold;
+    color: #1b262c;
+    text-transform: uppercase;
+}
+
+.footer::first-letter {
+    font-size: 32px;
+    color: darkblue;
+}

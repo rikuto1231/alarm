@@ -1,0 +1,59 @@
+
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+
+    
+
+
+</head>
+<body onload="start();">
+      <header>
+      <a>アラーム</a>
+      <label class="spmenu" for="sample">
+  <img class="menubar" src="img/neko_m.png" alt="アイコン">
+  </label>
+    <input type="checkbox" id="sample">
+    <div id="cover">
+　　<!-- メニュー -->
+      <ul>
+        <li>メニュー01</li>
+        <li>メニュー02</li>
+        <li>メニュー03</li>
+      </ul>
+    </div>
+    
+  </header>
+
+    <div id="myClock"
+        style="font:bold 40pt Times New Roman; color:#008888;">
+        
+    </div>
+    
+    <div class="alarm">
+    <img src="img/neko_s.png" width="150" height="100" onclick="akarm_select()">
+    </div>
+	
+    <script type="text/javascript">
+
+jsalarm.init()
+
+</script>
+
+
+
+
+    <footer>
+    <p>複数選択</p>
+  </footer>
+
+</body>
+</html>

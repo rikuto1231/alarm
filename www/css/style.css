@@ -1,0 +1,197 @@
+/* style.css */
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+body{
+    /*後で絶対パスで指定する*/
+     background-repeat: no-repeat;
+    background-image:url("img/sky.jpg");
+    width: auto;
+    height: auto;
+}
+
+#myClock{
+    align:center;
+    padding: 100px;
+}
+
+.alarm{
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    z-index: 10;
+  height: 50px;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #337079;
+  color: white;
+}
+header .headline{
+    line-height: 50px;
+    float: left;
+    font-size: 30px;
+    margin-left: 120px;
+}
+
+footer{
+
+     position: absolute;/*←絶対位置*/
+    bottom: 0px; /*下に固定*/
+    width: 100%;
+    height: 50px;
+    background-color: #174a5c;
+    color: white;
+    text-align: center;
+}
+
+#menu {
+  width: 250px;
+  height: 100%;
+  background-color: #191970;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  transform: translateX(250px); /* right0から250px移動した位置 */
+  transition: all .5s; /* 移動する速さ */
+}
+
+.menu-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  opacity: 0; /* 透明度を0にすることで隠す */
+  transition: opacity 0.5s; /* 透明度の0→1になる速度 */
+}
+
+.menu-background.open {
+  width: 100%;
+  height: 100%;
+  opacity: 1; /* メニューが表示されているときには背景が表示 */
+}
+
+
+
+.spmenu {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.menubar {
+  max-width: 60px;
+}
+
+
+/*ハンバーガーメニュー*/
+label[for="sample"]{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    z-index: 999;
+    font-size: 30px;
+    color: #000;
+}
+
+/*inputは隠す*/
+input[type="checkbox"]#sample {
+    visibility: hidden;
+}
+
+/*疑似要素で背景*/
+input[type="checkbox"]#sample:checked:before{
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    z-index: 2147483645;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease-in-out;
+}
+
+/*疑似要素で閉じるボタン*/
+input[type="checkbox"]#sample:checked:after{
+  content: "";
+  width: 20px;
+  height: 20px; 
+  background-image:url(http://kasumiblog.xsrv.jp/codepen/images/menubar02.png);
+  background-size: 20px;
+  visibility: visible;
+  display: block;
+  z-index: 2147483647;
+  position: fixed;
+  top: 12px;
+  right: 10px;
+}
+
+/*メニューを隠す*/
+input[type="checkbox"]#sample + #cover { 
+  width: 100%;
+  height: 100%;
+/*  background:rgba(245, 245, 245, 0.1); */
+  transition: 0.2s ease-in-out;
+  position:fixed;
+  top:0;
+  right: -100%;
+}
+
+/*メニューをオープン時*/
+input[type="checkbox"]#sample:checked + #cover {
+    overflow:scroll;
+  -webkit-overflow-scrolling:touch;
+    z-index: 2147483646;
+    right: 0;
+}
+
+/*メニューの中身装飾*/
+input[type="checkbox"]#sample + #cover > ul {
+  width: 80%;
+  height: 100%;
+  background:rgba(91, 179, 190, 0.95);
+  border:none;
+  z-index: 2147483646;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 15px;    /* 文字サイズ指定 */
+    color: #000000;     /* 文字色指定 */
+}
+
+
+#jsalarmclock{
+font-family: Tahoma;
+font-weight: bold;
+font-size: 12px;
+}
+
+#jsalarmclock div{
+margin-bottom: 0.8em;
+}
+
+#jsalarmclock div.leftcolumn{
+float: left;
+width: 150px;
+font-size: 13px;
+background-color: lightyellow;
+clear: left;
+}
+
+#jsalarmclock span{
+margin-right: 5px;
+}
